@@ -56,8 +56,8 @@ void printArray(int arr[], int size)
 {
     int i;
     for (i = 0; i < size; i++)
-    cout << arr[i] << " ";
-    cout << endl;
+    cout << arr[i] << endl;
+    
 }
 
 int missingNumber(int arr[],int size){
@@ -78,7 +78,31 @@ int missingNumber(int arr[],int size){
  */
 int main(int argc, char** argv) {
     
-    int arr[] = {1,3,3,3,6,7};
+    int t, aux=0;
+    cin >> t;
+    int arr[t];
+    while(aux<t){
+        int n;
+        cin >> n;
+        int A[n];
+        for (int i=0;i<n;i++)
+            cin >> A[i];
+        quickSort(A, 0, n );
+        int j, cont=1;
+        for (j = 0; j < n; j++){
+            if(A[j]>=(cont*2)){
+                
+                cont+=1;
+            
+            }
+        }
+        arr[aux]=(cont*2);
+        aux+=1;
+   
+    } 
+    printArray(arr, t);
+    
+    /*int arr[] = {1,3,3,3,6,7};
     //Descomenta la linea de abajo para probar con el otro arreglo
     //int arr[] = {3,0,2};
     int n = sizeof(arr) / sizeof(arr[0]);
@@ -86,7 +110,7 @@ int main(int argc, char** argv) {
     cout << "Sorted array: \n";
     printArray(arr, n);
     int num=missingNumber(arr, n-1);
-    cout << "El resultado es: "<< num ;
+    cout << "El resultado es: "<< num ;*/
     
     
 
